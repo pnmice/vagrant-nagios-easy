@@ -68,6 +68,7 @@ Also, it sets the user and password required to open the Dashboard url. In this 
 
 ```
 ansible-playbook plays/install-nagios-server.yml
+ansible-playbook main.yml --private-key=.vagrant/machines/nagioscentral/virtualbox/private_key  
 ```
 
 ### Set the Percona repository on the nodes (And install MySQL)
