@@ -1,0 +1,98 @@
+define service{
+        use                     	generic-service
+	hostgroup_name                  mysql-servers
+        service_description     	Memoria
+        check_command           	check_nrpe!rdba_unix_memory
+        }
+
+define service{
+        use                     	generic-service
+	hostgroup_name                  mysql-servers
+        service_description     	MySQL PID File
+        check_command           	check_nrpe!rdba_mysql_pidfile
+        }
+
+define service{
+        use                     	generic-service
+	hostgroup_name                  mysql-servers
+        service_description     	MySQL Deleted Files
+        check_command           	check_nrpe!rdba_mysql_deleted_files
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             NRPE Service
+        check_command                   check_nrpe_service
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL PID
+        check_command                   check_nrpe!rdba_mysql_pidfile
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL Processlist
+        check_command                   check_nrpe!mysql_processlist
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL User Connections 
+        check_command                   check_nrpe!mysql_user_connections
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL Connections
+        check_command                   check_nrpe!mysql_connections
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL Active Threads
+        check_command                   check_nrpe!mysql_active_threads
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL InnoDB Idle Blocker
+	check_command			check_nrpe!innodb_long_transaction
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL InnoDB Long Transaction 
+        check_command                   check_nrpe!innodb_max_duration
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL InnoDB Lock Waits 
+        check_command                   check_nrpe!innodb_waiter_count
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL Replication Running
+        check_command                   check_nrpe!replication_running
+        }
+
+define service{
+        use                             generic-service
+        hostgroup_name                  mysql-servers
+        service_description             MySQL Replication Delay
+        check_command                   check_nrpe!replication_delay
+        }
+

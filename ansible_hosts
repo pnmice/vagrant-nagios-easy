@@ -1,0 +1,5 @@
+#[small-nodes]
+#172.28.128.[3:4] ansible_ssh_user=vagrant home_dir=vagrant
+
+[monitor-server]
+172.28.128.7 ansible_ssh_user=vagrant home_dir=vagrant

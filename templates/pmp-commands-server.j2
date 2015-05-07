@@ -1,0 +1,9 @@
+define command{
+        command_name    check_nrpe_service
+        command_line    /usr/lib/nagios/plugins/check_nrpe -H $HOSTADDRESS$
+        }
+
+define command{
+        command_name    check_nrpe
+        command_line    /usr/lib/nagios/plugins/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
+        }
